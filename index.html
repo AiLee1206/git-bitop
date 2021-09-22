@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bitop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- 引入 React -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <!-- 引入 chart -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
+
+  </head>
+  <body>
+    <!-- Navigation menu start -->
+    <div class="container">
+      <div class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="">
+                        <button class="navbar-toggle" data-target="#mobile_menu" data-toggle="collapse">
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span><span class="icon-bar"></span>
+                        </button>
+                        <a href="#" class="navbar-brand">
+                          <img src="images/Bitop.png" alt="Bitop">
+                        </a>
+                    </div>
+                    <div class="navbar-collapse collapse" id="mobile_menu">
+                        <ul class="nav navbar-nav">
+                            <li class="navbar-style"><a href="#" class="dropdown-toggle" data-toggle="dropdown">合约交易<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">加密貨幣</a></li>
+                                    <li><a href="#">衍生品</a></li>
+                                    <li><a href="#">交割</a></li>
+                                </ul>
+                            </li>
+                            <li class="navbar-style"><a href="#">现货</a></li>
+                            <li class="navbar-style"><a href="#">趣味交易</a></li>
+                            <li class="navbar-style"><a href="#">跟单交易</a></li>
+                            <li class="navbar-style"><a href="#">天天挖矿</a></li>
+                            <li class="navbar-style"><a href="#">全球合伙人</a></li>
+                            <li class="navbar-style"><a href="#">平台公告</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="navbar-style" id="login"><a href="#">登录</a></li>
+                            <li class="navbar-style register-bg" id="register"><a href="#">註冊</a></li>
+                            <li><img src="images/Icons _ Systems _ Header _ Download.png" alt="Download"></li>
+                            <li><img src="images/Icons _ Systems _ Header _ Customer.png" alt="Customer"></li>
+                            <li><img src="images/Icons _ Systems _ Header _ Language.png" alt="Language"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navigation menu end -->
+
+    <!-- Banner for 1 -->
+    <div id="banner">
+      <img src="images/Banner-L.png" alt="Banner">
+    </div>
+
+    <!-- Banner for 4 -->
+    <div id="ad-Area">
+      <div class="ad-style">
+        <img src="images/S_Banner-1.png" alt="baner">
+      </div>
+      <div class="ad-style">
+        <img src="images/S_Banner-2.png" alt="baner">
+      </div>
+      <div class="ad-style">
+        <img src="images/S_Banner-3.png" alt="baner">
+      </div>
+      <div class="ad-style">
+        <img src="images/S_Banner-4.png" alt="baner">
+      </div>
+    </div>
+  </div>
+  <!-- Banner end -->
+
+  <!-- Stock tab content start -->
+  <div id="stock-Container">
+    <div id="stockStatus">
+      <div class="w3-bar stock-bar">
+        <button class="w3-bar-item w3-button tab-focus" onclick="openStock('stock-tab1')">市值榜</button>
+        <button class="w3-bar-item w3-button" onclick="openStock('stock-tab2')">最新价格</button>
+        <button class="w3-bar-item w3-button" onclick="openStock('stock-tab3')">跌幅榜</button>
+        <button class="w3-bar-item w3-button" onclick="openStock('stock-tab4')">24h成交榜</button>
+      </div>
+      <div id="stock-tab1" class="w3-display-container stockTab stock">
+        <table class="table">
+          <thead>
+            <tr class="table_tr">
+              <th></th>
+              <th>币种</th>
+              <th>最新价格</th>
+              <th>24涨跌</th>
+              <th>行情</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="data-panel">
+          </tbody>
+        </table> 
+      </div>
+      <div id="stock-tab2" class="w3-container w3-display-container stockTab" style="display:none">
+        <span onclick="this.parentElement.style.display='none'"
+        class="w3-button w3-large w3-display-topright">&times;</span>
+        <h2>最新价格</h2>
+        <p>最新价格描述</p> 
+      </div>
+      <div id="stock-tab3" class="w3-container w3-display-container stockTab" style="display:none">
+        <span onclick="this.parentElement.style.display='none'"
+        class="w3-button w3-large w3-display-topright">&times;</span>
+        <h2>跌幅榜</h2>
+        <p>跌幅榜描述</p>
+      </div>
+      <div id="stock-tab4" class="w3-container w3-display-container stockTab" style="display:none">
+        <span onclick="this.parentElement.style.display='none'"
+        class="w3-button w3-large w3-display-topright">&times;</span>
+        <h2>24h成交榜</h2>
+        <p>24h成交榜描述</p>
+      </div>
+    </div>
+  </div>
+  <div class="seeMore">
+    <span>查看更多 ></span>
+  </div>
+  <!-- Stock tab content end -->
+
+  <!-- Select Us start -->
+  <div class="selectUs">
+    <span class="selectUs-title">为什么选择我们</span>
+      <div class="selectUs-content">
+        <div class="col-sm-3 col-lg-3 security">
+          <img src="images/Icons _ Systems _ Other _ Safety On Light.png" alt="Bitop">
+          <p class="security-title">安全保障</p>
+          <p class="security-description">
+            Bitop结合中心化与去中心化双重手段，与流动性提供商及项目方共同设立百万风险保障基金，弥补用户穿仓损失。
+          </p>
+        </div>
+        <div class="col-sm-3 col-lg-3 security">
+          <img src="images/Icons _ Systems _ Other _ Mission On Light.png" alt="Bitop">
+          <p class="security-title">使命和愿景</p>
+          <p class="security-description">
+            4年稳定运营，专业开发团队，始终以用户体验为宗旨，致力发展完全自治的区块链数字资产共生共荣新生态。
+          </p>
+        </div>
+        <div class="col-sm-3 col-lg-3 security">
+          <img src="images/Icons _ Systems _ Other _ Contract B On Light.png" alt="Bitop">
+          <p class="security-title">智能合约</p>
+          <p class="security-description">
+            多空双向，低手续费，百倍杠杆，放大收益。
+          </p>
+        </div>
+        <div class="col-sm-3 col-lg-3 security">
+          <img src="images/Icons _ Systems _ Other _ Copy Trade On Liht.png" alt="Bitop">
+          <p class="security-title">达人跟随</p>
+          <p class="security-description">
+            精选带单达人，一键策略跟随。
+          </p>
+        </div>
+        <div class="col-sm-3 col-lg-3 security">
+          <img src="images/Icons _ Systems _ Other _ Conversation B On Light.png" alt="Bitop">
+          <p class="security-title">实时讨论</p>
+          <p class="security-description">
+            提供交易策略技术指导，平台用户在线畅聊，共同学习共同成长。
+          </p>
+        </div>
+        <div class="col-sm-3 col-lg-3 security">
+          <img src="images/Icons _ Systems _ Other _ Demo B On Light.png" alt="Bitop">
+          <p class="security-title">趣味交易</p>
+          <p class="security-description">
+            即兴竞猜，全球唯一匿名板块及智能合约板块加权指数，自动开奖。
+          </p>
+        </div>
+        <div class="col-sm-3 col-lg-3 security">
+          <img src="images/Icons _ Systems _ Other _ Trade B On Light.png" alt="Bitop">
+          <p class="security-title">币币多样</p>
+          <p class="security-description">
+            全球流动性提供商提供最低点差，24小时无间断交易，更多优质新币首发。
+          </p>
+        </div>
+        <div class="col-sm-3 col-lg-3 security">
+          <img src="images/Icons _ Systems _ Other _ Ecosystem On Light.png" alt="Bitop">
+          <p class="security-title">生态系统</p>
+          <p class="security-description">
+            Bitop运营整个社区生态体系，在线讨论区是全新的开放式学习中心，旨在为数字货币及衍生品交易提供一站式学习资源。
+          </p>
+        </div>
+      </div>
+  </div>
+  <!-- Select Us end -->
+
+  <!-- Certificate start -->
+  <div class="certificate">
+    <span class="certificate-title">监管许可</span>
+    <p class="certificate-sub">Bitop是在美国FinCEN（美国财政部下设机构金融犯罪执法局），以及加拿大FINTRAC （加拿大金融交易和报告分析中心）监管下，依法合规注册经营的金融及货币服务企业。Bitop将根据拥有金融许可证，遵守其运营所在的每个司法管辖区的所有适用法律和法规。</p>
+      
+    <div class="certificate-content">
+      <div class="col-sm-5 col-lg-5 certificate-col">
+        <div class="award-1">
+          <img src="images/Licence-US.png" alt="Bitop">
+        </div>
+        <div class="award-1-content">
+          <div>
+            <span class="certificate-country">美国</span>
+            <span class="certificate-status">
+              监管中
+            </span>
+          </div>
+          <div class="title">监管证号</div>
+          <div class="content">3100019212155</div>
+          <div class="title">发证日期</div>
+          <div class="content">2021/06/17</div>
+          <button class="certificate-buton" onclick="openCertificate('certificate-tab1')">美国验真网址 ></button>
+        </div>
+      </div>
+      <div class="col-sm-5 col-lg-5 certificate-col">
+        <div class="award-1">
+          <img src="images/Licence-CA.png" alt="Bitop">
+        </div>
+        <div class="award-1-content">
+          <div>
+            <span class="certificate-country">加拿大</span>
+            <span class="certificate-status">
+              监管中
+            </span>
+          </div>
+          <div class="title">监管证号</div>
+          <div class="content">M21813989</div>
+          <div class="title">发证日期</div>
+          <div class="content">2021/07/14</div>
+          <button class="certificate-buton" onclick="openCertificate('certificate-tab1')">美国验真网址 ></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Certificate end -->
+
+  <!-- Advertise start -->
+  <div class="advertise">
+    <span class="advertise-title">随时随地开启交易</span>
+    <p class="advertise-sub">覆盖iOS、Android、Google多个平台，随时随地掌上交易</p>
+    <div class="advertise-content">
+      <div class="col-sm-7 col-lg-7">
+        <div class="advertise-1">
+          <img src="images/Images-PC-Mobile.png" alt="Images-PC+Mobile">
+        </div>
+      </div>
+      <div class="col-sm-5 col-lg-5">
+        <div class="advertise-content qr_code-content">
+          <div>
+            <img class="qr_code" src="images/qr_code.png" alt="qr_code">
+            <div class="qrCode-area">
+              <div class="download-qrCode">
+                iOS & Android 扫码下载
+              </div>
+              <div class="download-platform">
+                iOS & Android
+              </div>
+            </div>
+          </div>
+          <div class="store-bg">
+            <div class="store-icon"><img src="images/Icons _ Systems _ Other _ Download _ App Store.png" alt="App Store"></div>
+            <div class="store-text">App Store</div>
+          </div>
+          <div class="store-bg">
+            <div class="store-icon"><img src="images/Icons _ Systems _ Other _ Download _ Android.png" alt="Android"></div>
+            <div class="store-text">Android</div>
+          </div>
+          <div class="store-bg">
+            <div class="store-icon"><img src="images/Icons _ Systems _ Other _ Download _ Google Play.png" alt="Google Play"></div>
+            <div class="store-text">Google Play</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Advertise end -->
+
+  <!-- Footer start -->
+  <div class="footer">
+    <div class="footer-content">
+      <div class="footer-col-1">
+        <div class="col-sm-5 col-lg-5">
+          <div class="advertise-1 footer-margin">
+            <img src="images/Bitop_gray.png" alt="Bitop">
+          </div>
+          <div class="footer-description">
+            Bitop是全球领先的数字金融服务平台，通过一站式数字投资服务、多样化资产配置工具、创新型投顾及全网领先的流动性，为全球用户构建安全、智能、公平的数字资产投资环境。Bitop核心团队来自传统金融证券行业、微软等顶级互联网公司等加密资产企业，具备丰富的传统金融交易、顶级加密资产交易平台研发及全球市场运营经验。成立半年以来，全球用户数已突破10万，遍布80多个国家和地区，覆盖北美、欧洲、亚太等主流区域。
+          </div>
+        </div>
+        <div class="col-sm-2 col-lg-2 footer-col">
+          <div class="footer-title footer-margin">
+            帮助
+          </div>
+          <div class="footer-description">
+            <div class="footer-margin">常见问题</div>
+            <div class="footer-margin">公告中心</div>
+          </div>
+        </div>
+        <div class="col-sm-2 col-lg-2">
+          <div class="footer-title footer-margin">
+            条款
+          </div>
+          <div class="footer-description">
+            <div class="footer-margin">服务条款</div>
+            <div class="footer-margin">隐私条款</div>
+            <div class="footer-margin">风险提示</div>
+          </div>
+        </div>
+        <div class="col-sm-2 col-lg-2">
+          <div class="footer-title footer-margin">
+            加入我们
+          </div>
+          <div class="footer-description">
+            <img src="images/Icons _ Systems _ Media _ Telegram.png" alt="Telegram">
+            <img src="images/Icons _ Systems _ Media _ Facebook.png" alt="Facebook">
+            <img src="images/Icons _ Systems _ Media _ Twitter.png" alt="Twitter">
+            <img src="images/Icons _ Systems _ Media _ Linkedin.png" alt="Linkedin">
+            <img src="images/Icons _ Systems _ Media _ Instagram.png" alt="Instagram">
+          </div>
+        </div>
+      </div>
+      <div class="footer-col-2">
+        <div class="col-sm-12 col-lg-12">
+          <div class="footer-risk">
+            风险提示：数字资产交易是一个新兴产业，存在光明前景，但正因为属于新事物，也蕴含巨大风险。特别是在合约交易中，杠杆倍数既同步扩大了盈利也同步放大了风险，请您务必对此行业、合约交易模式、交易规则等相关知识有充分了解后再参与。并且我们强烈建议您，在自身能够承担的风险范围内进行交易。交易有风险，入市须谨慎！
+          </div>
+        </div>
+      </div>
+      <div class="footer-col-3">
+        <div class="col-sm-12 col-lg-12">
+          <div class="footer-risk">
+            版权&copy;2021 Bitop.com，保留所有权利
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer end -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+  </body>
+</html>
