@@ -127,6 +127,7 @@ body {
 .w3-bar .w3-bar-item {
   color: #777e90;
   font-size: 16px;
+  padding: 10px 16px;
 }
 .nav img {
   cursor: pointer;
@@ -192,7 +193,7 @@ body {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0), #ffd140);
 }
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
-  padding: 7px 0 4px 0;
+  padding: 4px 0 1px 0;
   vertical-align: initial;
   border-top: 1px solid #1d1f26;
   text-align: center;
@@ -203,6 +204,7 @@ body {
   border-bottom: none;
   width: 21%;
   text-align: right;
+  padding: 20px 0 19px 0;
 }
 .table>tbody>tr>td {
   width: 21%;
@@ -385,7 +387,9 @@ body {
 /* AD */
 .advertise, 
 .advertise-title,
-.advertise-sub {
+.advertise-sub,
+.footer,
+.footer-content  {
   margin: 0 auto;
 }
 .advertise {
@@ -467,6 +471,7 @@ body {
 }
 /* footer */
 .footer{
+  width: 1919px;
   height: 404px;
   padding-top: 50px;
 }
@@ -484,7 +489,6 @@ body {
 }
 .footer-content {
   max-width: 1220px;
-  margin: 0 auto;
 }
 .footer-description {
   width: 476px;
@@ -538,7 +542,6 @@ body {
     left: auto;
   }
 }
-
 .lineChart {
   width: 94px!important;
   height: 37px!important;
