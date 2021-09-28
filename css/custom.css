@@ -228,8 +228,11 @@ body {
 .seeMore {
   width: 1920px;
   color: #777E90;
-  text-align: center;
   margin: 24px auto;
+}
+.seeMore button {
+  display: block;
+  margin: 0 auto;
   background: none;
   border: none;
 }
